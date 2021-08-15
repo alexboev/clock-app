@@ -1,0 +1,8 @@
+body {
+  background-image: url("assets/desktop/bg-image-daytime.jpg");
+  background-size: 100% auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
+}
+
+/*# sourceMappingURL=style.css.map */
