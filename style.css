@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
 html {
   background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -16,7 +20,16 @@ body .clock {
 }
 body .clock .time {
   grid-column: 2;
-  background-color: blueviolet;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+body .clock .time .time-title {
+  background-color: chartreuse;
+  font-family: Inter;
+  font-weight: 200;
+  grid-row: 2;
+  font-size: 23pt;
+  color: white;
 }
 body .clock .switch {
   grid-column: 3;
