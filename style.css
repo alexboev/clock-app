@@ -1,8 +1,40 @@
-body {
-  background-image: url("assets/desktop/bg-image-daytime.jpg");
-  background-size: 100% auto;
+html {
+  background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: multiply;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+body .clock {
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+}
+body .clock .time {
+  grid-column: 2;
+  background-color: blueviolet;
+}
+body .clock .switch {
+  grid-column: 3;
+  background-color: coral;
+}
+body .details {
+  grid-row: 2;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+}
+body .details .stats-left {
+  grid-column: 2;
+  background-color: darkgreen;
+}
+body .details .stats-right {
+  grid-column: 3;
+  background-color: greenyellow;
 }
 
 /*# sourceMappingURL=style.css.map */

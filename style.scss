@@ -1,6 +1,45 @@
-body {
-    background-image: url('assets/desktop/bg-image-daytime.jpg');
-    background-size: 100% auto;
+html {
+    background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
+    background-size: cover;
     background-color: hsla(0, 0%, 0%, 0.4);
     background-blend-mode: multiply;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    .clock{
+        display: grid;
+        grid-template-columns: 10% 1fr 1fr 10%;
+
+        .time {
+            grid-column: 2;
+            background-color: blueviolet;
+        }
+
+        .switch {
+            grid-column: 3;
+            background-color: coral;
+        }
+    }
+
+    .details {
+        grid-row: 2;
+        background-color: aquamarine;
+
+        display: grid;
+        grid-template-columns: 10% 1fr 1fr 10%;
+
+        .stats-left {
+            grid-column: 2;
+            background-color: darkgreen;
+        }
+
+        .stats-right {
+            grid-column: 3;
+            background-color: greenyellow;
+        }
+    }
 }
