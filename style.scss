@@ -28,12 +28,35 @@ body {
             grid-template-rows: 1fr 1fr 1fr;
 
             .time-title {
-                background-color: chartreuse;
-                font-family: Inter;
-                font-weight: 200;
+                background-color1: chartreuse;
+                
                 grid-row: 2;
-                font-size: 23pt;
+                
                 color: $color-main-text;
+
+                .time-title-clock-text {
+                    font-family: Inter;
+                    font-weight: 1000;
+                    letter-spacing: -5px;
+                    font-size: 16vh;
+                    line-height: 1.0;
+                    padding: 0;
+
+                    .time-title-clock-text-hours {
+                        display: inline-block;
+                        background-color: chocolate;
+                    }
+
+                    .time-title-clock-text-delimiter {
+                        display: inline-block;
+                        background-color: darkolivegreen;
+                    }
+
+                    .time-title-clock-text-minutes {
+                        display: inline-block;
+                        background-color: darkcyan;
+                    }
+                }
             }
         }
 

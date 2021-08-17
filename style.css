@@ -24,12 +24,29 @@ body .clock .time {
   grid-template-rows: 1fr 1fr 1fr;
 }
 body .clock .time .time-title {
-  background-color: chartreuse;
-  font-family: Inter;
-  font-weight: 200;
+  background-color1: chartreuse;
   grid-row: 2;
-  font-size: 23pt;
   color: white;
+}
+body .clock .time .time-title .time-title-clock-text {
+  font-family: Inter;
+  font-weight: 1000;
+  letter-spacing: -5px;
+  font-size: 16vh;
+  line-height: 1;
+  padding: 0;
+}
+body .clock .time .time-title .time-title-clock-text .time-title-clock-text-hours {
+  display: inline-block;
+  background-color: chocolate;
+}
+body .clock .time .time-title .time-title-clock-text .time-title-clock-text-delimiter {
+  display: inline-block;
+  background-color: darkolivegreen;
+}
+body .clock .time .time-title .time-title-clock-text .time-title-clock-text-minutes {
+  display: inline-block;
+  background-color: darkcyan;
 }
 body .clock .switch {
   grid-column: 3;
