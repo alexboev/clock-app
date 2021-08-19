@@ -1,7 +1,9 @@
-@font-face {
-    font-family: 'Inter';
-    src: url('assets/fonts/Inter-VariableFont_slnt\,wght.ttf')  format('truetype')
-}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 $color-main-text: rgb(255, 255, 255);
 
@@ -15,72 +17,150 @@ html {
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 50% 50%;
 
     .clock{
+        grid-row: 2;
         display: grid;
-        grid-template-columns: 10% 1fr 1fr 10%;
+        grid-template-columns: 10% 40% 40% 10%;
 
         .time {
-            grid-column: 2;
+            grid-column-start: 2;
             
             display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: 33% 34% 33%;
+
+            .greetings-icon {
+                height: 2vh;
+                display: inline-block;
+            }
+
+            .greetings {
+                grid-row: 1;
+                background-color1: darkblue;
+                font-family: 'Inter';
+                    font-weight: 400;
+                    font-size: 2vh;
+                    line-height: 1.0;
+                    text-transform: uppercase;
+                    color: $color-main-text;
+                    letter-spacing: 0.1em;
+
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    align-items: center;
+
+                    .greetings-content {
+                        
+                    }
+            }    
 
             .time-title {
-                background-color1: chartreuse;
+                background-color1: deeppink;
                 
                 grid-row: 2;
                 
                 color: $color-main-text;
 
                 .time-title-clock-text {
-                    font-family: Inter;
-                    font-weight: 1000;
-                    letter-spacing: -5px;
-                    font-size: 16vh;
-                    line-height: 1.0;
-                    padding: 0;
+                    font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 0;
+                    background-color1: darkred;
 
                     .time-title-clock-text-hours {
+                        font-size: 15vh;
                         display: inline-block;
-                        background-color: chocolate;
+                        background-color1: chocolate;
                     }
 
-                    .time-title-clock-text-delimiter {
+                    .time-title-timezone {
                         display: inline-block;
-                        background-color: darkolivegreen;
-                    }
-
-                    .time-title-clock-text-minutes {
-                        display: inline-block;
-                        background-color: darkcyan;
+                        font-size: 4vh;
+                        font-weight: 200;
                     }
                 }
+            }
+
+            .place {
+                background-color1: darkolivegreen;
+                grid-row: 3;
+                font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 2vh;
+                    line-height: 1.0;
+                    text-transform: uppercase;
+                    color: $color-main-text;
+                    letter-spacing: 0.1em;
+
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    align-items: center;
             }
         }
 
         .switch {
             grid-column: 3;
-            background-color: coral;
+            background-color1: coral;
+
+            display: grid;
+            grid-template-rows: 33% 34% 33%;
+
+            .switch-button-area {
+                grid-row: 3;
+                display: grid;
+                justify-content: end;
+                align-content: flex-start;
+
+                .switch-button-background {
+                    background-color: $color-main-text;
+
+                    display: inline-grid;
+                    grid-template-rows: 1fr;
+                    align-items: center;
+                    grid-template-columns: max-content max-content;
+                    border-radius: 4vh;
+                    padding: 1vh;
+                    justify-content: space-around;
+
+                    .switch-button-title {
+                        margin: 0 2vh 0 2vh;
+                        color: black;
+                        opacity: 0.5;
+                        font-family: 'Inter';
+                        font-weight: 700;
+                        font-size: 2vh;
+                        line-height: 1.0;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;                       
+                    }
+
+                    .switch-button-icon {
+                        height: 4vh;
+                        
+                    }
+                }
+            }
         }
     }
 
     .details {
-        grid-row: 2;
-        background-color: aquamarine;
+        grid-row: 3;
+        background-color: #FFFFFF;
+        backdrop-filter: blur(2px);
+        opacity: 0.75;
 
         display: grid;
         grid-template-columns: 10% 1fr 1fr 10%;
 
         .stats-left {
             grid-column: 2;
-            background-color: darkgreen;
+            background-color1: darkgreen;
         }
 
         .stats-right {
             grid-column: 3;
-            background-color: greenyellow;
+            background-color1: greenyellow;
         }
     }
 }

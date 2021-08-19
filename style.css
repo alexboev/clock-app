@@ -1,7 +1,7 @@
-@font-face {
-  font-family: "Inter";
-  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
 html {
   background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -12,59 +12,122 @@ html {
 body {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 50% 50%;
 }
 body .clock {
+  grid-row: 2;
   display: grid;
-  grid-template-columns: 10% 1fr 1fr 10%;
+  grid-template-columns: 10% 40% 40% 10%;
 }
 body .clock .time {
-  grid-column: 2;
+  grid-column-start: 2;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 33% 34% 33%;
+}
+body .clock .time .greetings-icon {
+  height: 2vh;
+  display: inline-block;
+}
+body .clock .time .greetings {
+  grid-row: 1;
+  background-color1: darkblue;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 2vh;
+  line-height: 1;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 body .clock .time .time-title {
-  background-color1: chartreuse;
+  background-color1: deeppink;
   grid-row: 2;
   color: white;
 }
 body .clock .time .time-title .time-title-clock-text {
-  font-family: Inter;
-  font-weight: 1000;
-  letter-spacing: -5px;
-  font-size: 16vh;
-  line-height: 1;
-  padding: 0;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 0;
+  background-color1: darkred;
 }
 body .clock .time .time-title .time-title-clock-text .time-title-clock-text-hours {
+  font-size: 15vh;
   display: inline-block;
-  background-color: chocolate;
+  background-color1: chocolate;
 }
-body .clock .time .time-title .time-title-clock-text .time-title-clock-text-delimiter {
+body .clock .time .time-title .time-title-clock-text .time-title-timezone {
   display: inline-block;
-  background-color: darkolivegreen;
+  font-size: 4vh;
+  font-weight: 200;
 }
-body .clock .time .time-title .time-title-clock-text .time-title-clock-text-minutes {
-  display: inline-block;
-  background-color: darkcyan;
+body .clock .time .place {
+  background-color1: darkolivegreen;
+  grid-row: 3;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 2vh;
+  line-height: 1;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 body .clock .switch {
   grid-column: 3;
-  background-color: coral;
+  background-color1: coral;
+  display: grid;
+  grid-template-rows: 33% 34% 33%;
+}
+body .clock .switch .switch-button-area {
+  grid-row: 3;
+  display: grid;
+  justify-content: end;
+  align-content: flex-start;
+}
+body .clock .switch .switch-button-area .switch-button-background {
+  background-color: white;
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  grid-template-columns: max-content max-content;
+  border-radius: 4vh;
+  padding: 1vh;
+  justify-content: space-around;
+}
+body .clock .switch .switch-button-area .switch-button-background .switch-button-title {
+  margin: 0 2vh 0 2vh;
+  color: black;
+  opacity: 0.5;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 2vh;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+body .clock .switch .switch-button-area .switch-button-background .switch-button-icon {
+  height: 4vh;
 }
 body .details {
-  grid-row: 2;
-  background-color: aquamarine;
+  grid-row: 3;
+  background-color: #FFFFFF;
+  backdrop-filter: blur(2px);
+  opacity: 0.75;
   display: grid;
   grid-template-columns: 10% 1fr 1fr 10%;
 }
 body .details .stats-left {
   grid-column: 2;
-  background-color: darkgreen;
+  background-color1: darkgreen;
 }
 body .details .stats-right {
   grid-column: 3;
-  background-color: greenyellow;
+  background-color1: greenyellow;
 }
 
 /*# sourceMappingURL=style.css.map */
