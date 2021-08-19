@@ -20,7 +20,7 @@ body {
     grid-template-rows: 50% 50%;
 
     .clock{
-        grid-row: 2;
+        grid-row: 1;
         display: grid;
         grid-template-columns: 10% 40% 40% 10%;
 
@@ -144,23 +144,55 @@ body {
         }
     }
 
+    $blur: 1px;
+
     .details {
-        grid-row: 3;
+        grid-row: 2;
         background-color: #FFFFFF;
-        backdrop-filter: blur(2px);
+        
         opacity: 0.75;
 
         display: grid;
-        grid-template-columns: 10% 1fr 1fr 10%;
+        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-rows: 2fr 36% 36% 1fr;
 
-        .stats-left {
-            grid-column: 2;
-            background-color1: darkgreen;
+        color: #303030;
+        font-family: 'Inter';
+
+        .stats-header {
+            text-transform: uppercase;
+            font-size: 2vh;
+            font-weight: 400;
         }
 
-        .stats-right {
+        .stats-value {
+            font-size: 8vh;
+            font-weight: 700;
+        }
+
+        .stats-block {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .stats-timezone {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .stats-day-year {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .stats-day-week {
             grid-column: 3;
-            background-color1: greenyellow;
+            grid-row: 2;
+        }
+
+        .stats-week-number {
+            grid-column: 3;
+            grid-row: 3;
         }
     }
 }
