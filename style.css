@@ -27,6 +27,7 @@ body .clock .time {
 body .clock .time .greetings-icon {
   height: 2vh;
   display: inline-block;
+  margin-right: 2vh;
 }
 body .clock .time .greetings {
   grid-row: 1;
@@ -40,7 +41,14 @@ body .clock .time .greetings {
   letter-spacing: 0.1em;
   display: grid;
   grid-template-rows: 1fr;
-  align-items: center;
+  align-items: flex-end;
+  margin-bottom: 2vh;
+}
+body .clock .time .greetings .greetings-content {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: min-content 1fr;
+  align-content: center;
 }
 body .clock .time .time-title {
   background-color1: deeppink;
@@ -75,7 +83,8 @@ body .clock .time .place {
   letter-spacing: 0.1em;
   display: grid;
   grid-template-rows: 1fr;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 2vh;
 }
 body .clock .switch {
   grid-column: 3;
@@ -98,10 +107,17 @@ body .clock .switch .switch-button-area .switch-button-background {
   border-radius: 4vh;
   padding: 1vh;
   justify-content: space-around;
+  color: black;
+  cursor: pointer;
+}
+body .clock .switch .switch-button-area .switch-button-background:hover {
+  color: #999999;
+}
+body .clock .switch .switch-button-area .switch-button-background:hover .switch-button-icon {
+  background-image: url(assets/desktop/icon-arrow-up-hover.svg);
 }
 body .clock .switch .switch-button-area .switch-button-background .switch-button-title {
   margin: 0 2vh 0 2vh;
-  color: black;
   opacity: 0.5;
   font-family: "Inter";
   font-weight: 700;
@@ -112,14 +128,18 @@ body .clock .switch .switch-button-area .switch-button-background .switch-button
 }
 body .clock .switch .switch-button-area .switch-button-background .switch-button-icon {
   height: 4vh;
+  width: 4vh;
+  background-image: url(assets/desktop/icon-arrow-up.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body .details {
   grid-row: 2;
   background-color: #FFFFFF;
   opacity: 0.75;
   display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
-  grid-template-rows: 2fr 36% 36% 1fr;
+  grid-template-columns: 1fr 40% 1px 40% 1fr;
+  grid-template-rows: 1fr 36% 36% 1fr;
   color: #303030;
   font-family: "Inter";
 }
@@ -144,13 +164,33 @@ body .details .stats-day-year {
   grid-column: 2;
   grid-row: 3;
 }
-body .details .stats-day-week {
-  grid-column: 3;
+body .details .stats-day-year .stats-header {
   grid-row: 2;
 }
-body .details .stats-week-number {
-  grid-column: 3;
+body .details .stats-day-year .stats-value {
   grid-row: 3;
+}
+body .details .stats-day-week {
+  grid-column: 4;
+  grid-row: 2;
+  padding-left: 10vh;
+}
+body .details .stats-week-number {
+  grid-column: 4;
+  grid-row: 3;
+  padding-left: 10vh;
+  align-content: flex-end;
+}
+body .details .stats-week-number .stats-header {
+  grid-row: 2;
+}
+body .details .stats-week-number .stats-value {
+  grid-row: 3;
+}
+body .details .stats-delimiter {
+  grid-column: 3;
+  grid-row: 2/4;
+  background-color: #B8BBBC;
 }
 
 /*# sourceMappingURL=style.css.map */

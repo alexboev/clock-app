@@ -29,10 +29,12 @@ body {
             
             display: grid;
             grid-template-rows: 33% 34% 33%;
+            
 
             .greetings-icon {
                 height: 2vh;
                 display: inline-block;
+                margin-right: 2vh;
             }
 
             .greetings {
@@ -48,10 +50,14 @@ body {
 
                     display: grid;
                     grid-template-rows: 1fr;
-                    align-items: center;
+                    align-items: flex-end;
+                    margin-bottom: 2vh;
 
                     .greetings-content {
-                        
+                        display: grid;
+                        grid-template-rows: 1fr;
+                        grid-template-columns: min-content 1fr;
+                        align-content: center;
                     }
             }    
 
@@ -95,7 +101,8 @@ body {
 
                     display: grid;
                     grid-template-rows: 1fr;
-                    align-items: center;
+                    align-items: flex-start;
+                    margin-top: 2vh;
             }
         }
 
@@ -115,6 +122,7 @@ body {
                 .switch-button-background {
                     background-color: $color-main-text;
 
+
                     display: inline-grid;
                     grid-template-rows: 1fr;
                     align-items: center;
@@ -122,22 +130,35 @@ body {
                     border-radius: 4vh;
                     padding: 1vh;
                     justify-content: space-around;
+                    color: black;
+                    cursor: pointer;
+                    &:hover {
+                        color: #999999;
+                        .switch-button-icon {
+                            background-image: url(assets/desktop/icon-arrow-up-hover.svg);
+                        }
+                    }
 
                     .switch-button-title {
                         margin: 0 2vh 0 2vh;
-                        color: black;
+                        
                         opacity: 0.5;
                         font-family: 'Inter';
                         font-weight: 700;
                         font-size: 2vh;
                         line-height: 1.0;
                         text-transform: uppercase;
-                        letter-spacing: 0.1em;                       
+                        letter-spacing: 0.1em;    
+                        
+                        
                     }
 
                     .switch-button-icon {
                         height: 4vh;
-                        
+                        width: 4vh;
+                        background-image: url(assets/desktop/icon-arrow-up.svg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
                     }
                 }
             }
@@ -153,8 +174,8 @@ body {
         opacity: 0.75;
 
         display: grid;
-        grid-template-columns: 10% 40% 40% 10%;
-        grid-template-rows: 2fr 36% 36% 1fr;
+        grid-template-columns: 1fr 40% 1px 40% 1fr;
+        grid-template-rows: 1fr 36% 36% 1fr;
 
         color: #303030;
         font-family: 'Inter';
@@ -183,16 +204,42 @@ body {
         .stats-day-year {
             grid-column: 2;
             grid-row: 3;
+
+            .stats-header {
+                grid-row: 2;
+            }
+
+            .stats-value {
+                grid-row: 3;
+            }
         }
 
         .stats-day-week {
-            grid-column: 3;
+            grid-column: 4;
             grid-row: 2;
+            padding-left: 10vh;
         }
 
         .stats-week-number {
-            grid-column: 3;
+            grid-column: 4;
             grid-row: 3;
+            padding-left: 10vh;
+
+            align-content: flex-end;
+
+            .stats-header {
+                grid-row: 2;
+            }
+
+            .stats-value {
+                grid-row: 3;
+            }
+        }
+
+        .stats-delimiter {
+            grid-column: 3;
+            grid-row: 2 / 4;
+            background-color: #B8BBBC;
         }
     }
 }
