@@ -8,7 +8,7 @@
 $color-main-text: rgb(255, 255, 255);
 
 html {
-    background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
+    background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center center fixed;
     background-size: cover;
     background-color: hsla(0, 0%, 0%, 0.4);
     background-blend-mode: multiply;
@@ -16,11 +16,63 @@ html {
 
 body {
     height: 100vh;
+    font-family: 'Inter';
+
     display: grid;
     grid-template-rows: 50% 50%;
 
-    .clock{
+    .quote-block {
+        background-color1: royalblue;
         grid-row: 1;
+        
+        display: grid;
+        grid-template-rows: 5vh 1fr; 
+        display: grid;
+        grid-template-columns: 10% 40% 1fr;
+        color: $color-main-text;
+        
+        .quote{
+            margin-top: 5vh;
+            background-color1: silver;
+            grid-row: 2;
+            grid-column: 2;
+
+            display: grid;
+            grid-template-columns: 1fr min-content;
+
+            .quote-content {
+                grid-column: 1;
+
+                .quote-text {
+                    font-weight: 300;
+                        font-size: 2vh;
+                }
+    
+                .quote-author {
+                    font-weight: 700;
+                        font-size: 2vh;
+                }
+            }
+
+            .quote-refresh-content {
+                background-color1: tomato;
+                grid-column: 2;
+
+                .quote-refresh {
+                    margin-top: 3vh;
+                    margin-left: 1vh;
+                    height: 2vh;
+                    width: 2vh;
+                    cursor: pointer;
+                }
+            }
+
+            
+        }
+    }
+
+    .clock{
+        grid-row: 2; /* 1 - more, 2 - less*/
         display: grid;
         grid-template-columns: 10% 40% 40% 10%;
 
@@ -32,7 +84,10 @@ body {
             
 
             .greetings-icon {
-                height: 2vh;
+                height: 3vh;
+                width: 3vh;
+                background-image: url('assets/desktop/icon-moon.svg');
+                background-size: cover;
                 display: inline-block;
                 margin-right: 2vh;
             }
@@ -40,7 +95,7 @@ body {
             .greetings {
                 grid-row: 1;
                 background-color1: darkblue;
-                font-family: 'Inter';
+                
                     font-weight: 400;
                     font-size: 2vh;
                     line-height: 1.0;
@@ -57,6 +112,13 @@ body {
                         display: grid;
                         grid-template-rows: 1fr;
                         grid-template-columns: min-content 1fr;
+                        
+                    }
+
+                   
+
+                    .greetings-text {
+                        display: grid;
                         align-content: center;
                     }
             }    
@@ -173,7 +235,7 @@ body {
         
         opacity: 0.75;
 
-        display: grid;
+        display: none; /* grid*/
         grid-template-columns: 1fr 40% 1px 40% 1fr;
         grid-template-rows: 1fr 36% 36% 1fr;
 

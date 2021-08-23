@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
 html {
-  background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
+  background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center center fixed;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: multiply;
@@ -11,11 +11,52 @@ html {
 
 body {
   height: 100vh;
+  font-family: "Inter";
   display: grid;
   grid-template-rows: 50% 50%;
 }
-body .clock {
+body .quote-block {
+  background-color1: royalblue;
   grid-row: 1;
+  display: grid;
+  grid-template-rows: 5vh 1fr;
+  display: grid;
+  grid-template-columns: 10% 40% 1fr;
+  color: white;
+}
+body .quote-block .quote {
+  margin-top: 5vh;
+  background-color1: silver;
+  grid-row: 2;
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+body .quote-block .quote .quote-content {
+  grid-column: 1;
+}
+body .quote-block .quote .quote-content .quote-text {
+  font-weight: 300;
+  font-size: 2vh;
+}
+body .quote-block .quote .quote-content .quote-author {
+  font-weight: 700;
+  font-size: 2vh;
+}
+body .quote-block .quote .quote-refresh-content {
+  background-color1: tomato;
+  grid-column: 2;
+}
+body .quote-block .quote .quote-refresh-content .quote-refresh {
+  margin-top: 3vh;
+  margin-left: 1vh;
+  height: 2vh;
+  width: 2vh;
+  cursor: pointer;
+}
+body .clock {
+  grid-row: 2;
+  /* 1 - more, 2 - less*/
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
 }
@@ -25,14 +66,16 @@ body .clock .time {
   grid-template-rows: 33% 34% 33%;
 }
 body .clock .time .greetings-icon {
-  height: 2vh;
+  height: 3vh;
+  width: 3vh;
+  background-image: url("assets/desktop/icon-moon.svg");
+  background-size: cover;
   display: inline-block;
   margin-right: 2vh;
 }
 body .clock .time .greetings {
   grid-row: 1;
   background-color1: darkblue;
-  font-family: "Inter";
   font-weight: 400;
   font-size: 2vh;
   line-height: 1;
@@ -48,6 +91,9 @@ body .clock .time .greetings .greetings-content {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: min-content 1fr;
+}
+body .clock .time .greetings .greetings-text {
+  display: grid;
   align-content: center;
 }
 body .clock .time .time-title {
@@ -137,7 +183,8 @@ body .details {
   grid-row: 2;
   background-color: #FFFFFF;
   opacity: 0.75;
-  display: grid;
+  display: none;
+  /* grid*/
   grid-template-columns: 1fr 40% 1px 40% 1fr;
   grid-template-rows: 1fr 36% 36% 1fr;
   color: #303030;
