@@ -153,6 +153,7 @@ body {
                     text-transform: uppercase;
                     color: $color-main-text;
                     letter-spacing: 0.1em;
+                    height: 100%;
 
                     display: grid;
                     grid-template-rows: 1fr;
@@ -176,7 +177,7 @@ body {
 
             .time-title {
                 background-color: deeppink;
-                
+                height: 100%;
                 grid-row: 2;
                 
                 color: $color-main-text;
@@ -202,6 +203,7 @@ body {
             }
 
             .place {
+                height: 100%;
                 background-color: darkolivegreen;
                 grid-row: 3;
                 font-family: 'Inter';
@@ -215,7 +217,6 @@ body {
                     display: grid;
                     grid-template-rows: 1fr;
                     align-items: center;
-                    margin-top: 2vh;
             }
         }
 

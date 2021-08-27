@@ -118,6 +118,7 @@ body .clock .time .greetings {
   text-transform: uppercase;
   color: white;
   letter-spacing: 0.1em;
+  height: 100%;
   display: grid;
   grid-template-rows: 1fr;
   align-items: center;
@@ -134,6 +135,7 @@ body .clock .time .greetings .greetings-text {
 }
 body .clock .time .time-title {
   background-color: deeppink;
+  height: 100%;
   grid-row: 2;
   color: white;
 }
@@ -154,6 +156,7 @@ body .clock .time .time-title .time-title-clock-text .time-title-timezone {
   font-weight: 200;
 }
 body .clock .time .place {
+  height: 100%;
   background-color: darkolivegreen;
   grid-row: 3;
   font-family: "Inter";
@@ -166,7 +169,6 @@ body .clock .time .place {
   display: grid;
   grid-template-rows: 1fr;
   align-items: center;
-  margin-top: 2vh;
 }
 body .clock .switch {
   grid-row: 3;
