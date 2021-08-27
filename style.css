@@ -3,24 +3,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
 html {
-  background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center center fixed;
+  background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center fixed;
+  /*background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center center fixed;*/
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: multiply;
+}
+
+.day .greetings-icon {
+  background-image: url("assets/desktop/icon-sun.svg");
+}
+.day .details {
+  background-color: #FFFFFF;
+  color: #303030;
+}
+
+.night .greetings-icon {
+  background-image: url("assets/desktop/icon-moon.svg");
+}
+.night .details {
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 body {
   height: 100vh;
   font-family: "Inter";
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 56% 44%;
+}
+@media (min-aspect-ratio: 1000/877) {
+  body {
+    grid-template-rows: 50% 50%;
+  }
 }
 body .quote-block {
   background-color1: royalblue;
   grid-row: 1;
-  display: grid;
+  display: none;
+  /* grid */
   grid-template-rows: 5vh 1fr;
-  display: grid;
   grid-template-columns: 10% 40% 1fr;
   color: white;
 }
@@ -55,27 +77,41 @@ body .quote-block .quote .quote-refresh-content .quote-refresh {
   cursor: pointer;
 }
 body .clock {
-  grid-row: 2;
-  /* 1 - more, 2 - less*/
   display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
+  grid-row: 1;
+  /* 1 - more, 2 - less*/
+  grid-template-rows: 20% 50% 30%;
+  grid-template-columns: 8% 84% 8%;
+}
+@media (min-aspect-ratio: 1000/877) {
+  body .clock {
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 40% 40% 10%;
+  }
 }
 body .clock .time {
-  grid-column-start: 2;
+  background-color: yellowgreen;
   display: grid;
   grid-template-rows: 33% 34% 33%;
+  grid-row: 2;
+  grid-column: 2;
+}
+@media (min-aspect-ratio: 1000/877) {
+  body .clock .time {
+    grid-row: unset;
+    grid-column: 2;
+  }
 }
 body .clock .time .greetings-icon {
   height: 3vh;
   width: 3vh;
-  background-image: url("assets/desktop/icon-moon.svg");
   background-size: cover;
   display: inline-block;
   margin-right: 2vh;
 }
 body .clock .time .greetings {
   grid-row: 1;
-  background-color1: darkblue;
+  background-color: darkblue;
   font-weight: 400;
   font-size: 2vh;
   line-height: 1;
@@ -84,7 +120,7 @@ body .clock .time .greetings {
   letter-spacing: 0.1em;
   display: grid;
   grid-template-rows: 1fr;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 2vh;
 }
 body .clock .time .greetings .greetings-content {
@@ -97,7 +133,7 @@ body .clock .time .greetings .greetings-text {
   align-content: center;
 }
 body .clock .time .time-title {
-  background-color1: deeppink;
+  background-color: deeppink;
   grid-row: 2;
   color: white;
 }
@@ -118,7 +154,7 @@ body .clock .time .time-title .time-title-clock-text .time-title-timezone {
   font-weight: 200;
 }
 body .clock .time .place {
-  background-color1: darkolivegreen;
+  background-color: darkolivegreen;
   grid-row: 3;
   font-family: "Inter";
   font-weight: 700;
@@ -129,20 +165,32 @@ body .clock .time .place {
   letter-spacing: 0.1em;
   display: grid;
   grid-template-rows: 1fr;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 2vh;
 }
 body .clock .switch {
-  grid-column: 3;
-  background-color1: coral;
+  grid-row: 3;
+  grid-column: 2;
   display: grid;
   grid-template-rows: 33% 34% 33%;
+  align-items: center;
+}
+@media (min-aspect-ratio: 1000/877) {
+  body .clock .switch {
+    grid-row: unset;
+    grid-column: 3;
+  }
 }
 body .clock .switch .switch-button-area {
-  grid-row: 3;
+  grid-row: 2;
   display: grid;
-  justify-content: end;
-  align-content: flex-start;
+  justify-content: start;
+}
+@media (min-aspect-ratio: 1000/877) {
+  body .clock .switch .switch-button-area {
+    justify-content: end;
+    grid-row: 3;
+  }
 }
 body .clock .switch .switch-button-area .switch-button-background {
   background-color: white;
@@ -181,13 +229,12 @@ body .clock .switch .switch-button-area .switch-button-background .switch-button
 }
 body .details {
   grid-row: 2;
-  background-color: #FFFFFF;
   opacity: 0.75;
-  display: none;
+  backdrop-filter: blur(5px);
+  display: grid;
   /* grid*/
   grid-template-columns: 1fr 40% 1px 40% 1fr;
   grid-template-rows: 1fr 36% 36% 1fr;
-  color: #303030;
   font-family: "Inter";
 }
 body .details .stats-header {
@@ -238,6 +285,19 @@ body .details .stats-delimiter {
   grid-column: 3;
   grid-row: 2/4;
   background-color: #B8BBBC;
+}
+
+.layout-debug .clock {
+  background-color: brown;
+}
+.layout-debug .clock .time {
+  background-color: chocolate;
+}
+.layout-debug .clock .switch {
+  background-color: darkcyan;
+}
+.layout-debug .clock .switch-button-area {
+  background-color: yellow;
 }
 
 /*# sourceMappingURL=style.css.map */
