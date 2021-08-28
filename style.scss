@@ -17,7 +17,8 @@ html {
     
 }
 
-$breakpoint-desktop: '1000/877';
+$breakpoint-tablet: '617/887';
+$breakpoint-desktop: '929/583';
 
 .day {
 
@@ -122,33 +123,33 @@ body {
         
 
         .time {
-            background-color: yellowgreen;
+            
             display: grid;
-            grid-template-rows: 33% 34% 33%;
+            grid-template-rows: 20% 60% 20%;
             grid-row: 2;
             grid-column: 2;
             
 
             @media (min-aspect-ratio: $breakpoint-desktop) {
+                grid-template-rows: 33% 34% 33%;
                 grid-row: unset;
                 grid-column: 2;
             }
             
 
-            .greetings-icon {
-                height: 3vh;
-                width: 3vh;
-                background-size: cover;
-                display: inline-block;
-                margin-right: 2vh;
-            }
+            
 
             .greetings {
                 grid-row: 1;
-                background-color: darkblue;
+                
                 
                     font-weight: 400;
-                    font-size: 2vh;
+                    font-size: 1.5vh;
+
+                    @media (min-aspect-ratio: $breakpoint-tablet) {
+                        font-size: 2vh;
+                    }
+
                     line-height: 1.0;
                     text-transform: uppercase;
                     color: $color-main-text;
@@ -157,17 +158,23 @@ body {
 
                     display: grid;
                     grid-template-rows: 1fr;
-                    align-items: center;
-                    margin-bottom: 2vh;
+                    align-items: flex-end; /* desktop */
+                    
 
                     .greetings-content {
                         display: grid;
                         grid-template-rows: 1fr;
                         grid-template-columns: min-content 1fr;
-                        
+                        padding-bottom: 2vh;
                     }
 
-                   
+                    .greetings-icon {
+                        height: 3vh;
+                        width: 3vh;
+                        background-size: cover;
+                        display: inline-block;
+                        margin-right: 2vh;
+                    }
 
                     .greetings-text {
                         display: grid;
@@ -176,7 +183,6 @@ body {
             }    
 
             .time-title {
-                background-color: deeppink;
                 height: 100%;
                 grid-row: 2;
                 
@@ -186,12 +192,21 @@ body {
                     font-family: 'Inter';
                     font-weight: 700;
                     font-size: 0;
-                    background-color1: darkred;
 
                     .time-title-clock-text-hours {
-                        font-size: 15vh;
+                        font-size: 11vh;
+
+                        @media (min-aspect-ratio: $breakpoint-tablet) {
+                            font-size: 20vh;
+                            margin-top: -3vh;
+                        }
+
+                        @media (min-aspect-ratio: $breakpoint-desktop) {
+                            font-size: 22vh;
+                            margin-top: -4vh;
+                        }
+
                         display: inline-block;
-                        background-color1: chocolate;
                     }
 
                     .time-title-timezone {
@@ -204,11 +219,18 @@ body {
 
             .place {
                 height: 100%;
-                background-color: darkolivegreen;
+                
                 grid-row: 3;
                 font-family: 'Inter';
                     font-weight: 700;
-                    font-size: 2vh;
+                    font-size: 1.5vh;
+
+                    @media (min-aspect-ratio: $breakpoint-tablet) {
+                        font-size: 2vh;
+                        padding-top: 2vh; /* desktop */
+                        align-items: flex-start; /* desktop */
+                    }
+
                     line-height: 1.0;
                     text-transform: uppercase;
                     color: $color-main-text;
@@ -216,7 +238,7 @@ body {
 
                     display: grid;
                     grid-template-rows: 1fr;
-                    align-items: center;
+                    
             }
         }
 
@@ -304,65 +326,152 @@ body {
         backdrop-filter: blur(5px);
 
         display: grid; /* grid*/
-        grid-template-columns: 1fr 40% 1px 40% 1fr;
-        grid-template-rows: 1fr 36% 36% 1fr;
+
+        grid-template-columns: 1fr 85% 1fr;
+        grid-template-rows: 1fr repeat(4, 18%) 1fr;
+
+        @media (min-aspect-ratio: $breakpoint-tablet) {
+            grid-template-columns: 1fr 42% 1px 42% 1fr;
+            grid-template-rows: 1fr repeat(2, 36%) 1fr;
+        }
+
+        @media (min-aspect-ratio: $breakpoint-desktop) {
+            grid-template-columns: 1fr 40% 1px 40% 1fr;
+        }
 
         
         font-family: 'Inter';
 
         .stats-header {
             text-transform: uppercase;
-            font-size: 2vh;
+            font-size: 1.5vh;
+
+            display: grid;
+            align-content: center;
+
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                display: unset;
+                align-content: unset;
+            }
+
+            @media (min-aspect-ratio: $breakpoint-desktop) {
+                font-size: 2vh;
+            }
+
             font-weight: 400;
         }
 
         .stats-value {
-            font-size: 8vh;
+            font-size: 3vh;
+
+            display: grid;
+            align-content: center;
+            justify-content: right;
+
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                font-size: 5vh;
+                display: unset;
+                align-content: unset;
+            }
+
+            @media (min-aspect-ratio: $breakpoint-desktop) {
+                font-size: 8vh;
+            }
+
             font-weight: 700;
         }
 
         .stats-block {
             display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
+            
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            justify-content: space-between;
+
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                grid-template-columns: unset;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
         }
 
         .stats-timezone {
             grid-column: 2;
             grid-row: 2;
+
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                grid-column: 2;
+                grid-row: 2;
+            }
         }
 
         .stats-day-year {
             grid-column: 2;
             grid-row: 3;
 
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
             .stats-header {
-                grid-row: 2;
+                grid-column: 1;
+
+                @media (min-aspect-ratio: $breakpoint-tablet) {
+                    grid-column: unset;
+                    grid-row: 2;
+                }
             }
 
             .stats-value {
-                grid-row: 3;
+                grid-column:  2;
+
+                @media (min-aspect-ratio: $breakpoint-tablet) {
+                    text-align: unset;
+                    grid-column:  unset;
+                    grid-row: 3;
+                }
             }
         }
 
         .stats-day-week {
-            grid-column: 4;
-            grid-row: 2;
-            padding-left: 10vh;
+            grid-column: 2;
+            grid-row: 4;
+            
+
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                grid-column: 4;
+                grid-row: 2;
+                padding-left: 10vh;
+            }
         }
 
         .stats-week-number {
-            grid-column: 4;
-            grid-row: 3;
-            padding-left: 10vh;
+            grid-column: 2;
+            grid-row: 5;
+            
 
             align-content: flex-end;
 
+            @media (min-aspect-ratio: $breakpoint-tablet) {
+                grid-column: 4;
+                grid-row: 3;
+                padding-left: 10vh;
+            }
+
             .stats-header {
-                grid-row: 2;
+
+                @media (min-aspect-ratio: $breakpoint-tablet) {
+                    grid-row: 2;
+                }
             }
 
             .stats-value {
-                grid-row: 3;
+                grid-column: 2;
+
+                @media (min-aspect-ratio: $breakpoint-tablet) {
+                    grid-column: unset;
+                    grid-row: 3;
+                }
             }
         }
 
@@ -370,6 +479,11 @@ body {
             grid-column: 3;
             grid-row: 2 / 4;
             background-color: #B8BBBC;
+            display: none;
+
+            @media (min-aspect-ratio: $breakpoint-desktop) {
+                display: unset;
+            }
         }
     }
 }
